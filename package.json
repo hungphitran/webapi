@@ -13,7 +13,7 @@
     "cors": "^2.8.5",
     "ee-first": "^1.1.1",
     "express": "^4.13.3",
-    "mongoose": "^6.10.0",
+    "mongoose": "^8.5.2",
     "node-restful": "^0.2.6"
   },
   "devDependencies": {
