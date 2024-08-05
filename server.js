@@ -5,21 +5,18 @@ const cors = require('cors');
 const router = require('./routes/api');
 
 // MongoDB connection
-mongoose.connect('mongodb+srv://nckhe22:nckhe22@procleaner.ragb04b.mongodb.net/?retryWrites=true&w=majority&appName=Procleaner', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(() => {
-  console.log('Connected to MongoDB');
-}).catch(err => {
-  console.error('Error connecting to MongoDB:', err);
-});
-
+//mongoose.connect('mongodb+srv://nckhe22:nckhe22@procleaner.ragb04b.mongodb.net/?retryWrites=true&w=majority&appName=Procleaner')
+mongoose
+    .connect('mongodb+srv://nckhe22:nckhe22@procleaner.ragb04b.mongodb.net/?retryWrites=true&w=majority&appName=Procleaner')
+    .catch (error => console.log(error));
 // Express setup
 const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use('/api', router);
+app.use('/api', router,()=>{
+  app.render('<p>hello</p>');
+});
 
 // Start server
 app.listen(process.env.PORT || 4444, () => {

@@ -85,11 +85,9 @@ doitac.register(router,'/doitac');
 
 const tc = {
    get: async (req, res) => {
-    console.log(req.body)
      try {
        await tieuchi.find()
        .then(datas=>{
-        console.log(datas)
         return datas;
       })
      } catch (error) {
@@ -101,13 +99,10 @@ const tc = {
  };
  const q = {
   get: async (req, res) => {
-   console.log(req.body)
     try {
       await quan.find()
-      .then(datas=>{
-       console.log(datas)
-       return datas;
-     })
+      .then(datas=>datas)
+      .catch(err=>console.error(err))
     } catch (error) {
       console.error("Error fetching tieuchi data:", error);
       res.status(500).json({ message: "Internal server error" }); // Send a more informative error message to the client
@@ -117,11 +112,9 @@ const tc = {
 };
 const p= {
   get: async (req, res) => {
-   console.log(req.body)
     try {
       await phuong.find()
       .then(datas=>{
-       console.log(datas)
        return datas;
      })
     } catch (error) {
@@ -133,11 +126,9 @@ const p= {
 };
 const kv= {
   get: async (req, res) => {
-   console.log(req.body)
     try {
       await khuvuc.find()
       .then(datas=>{
-       console.log(datas)
        return datas;
      })
     } catch (error) {
@@ -149,11 +140,9 @@ const kv= {
 };
 const yc= {
   get: async (req, res) => {
-   console.log(req.body)
     try {
       await yeucau.find()
       .then(datas=>{
-       console.log(datas)
        return datas;
      })
     } catch (error) {
@@ -177,11 +166,9 @@ const yc= {
 };
 const ctyc= {
   get: async (req, res) => {
-   console.log(req.body)
     try {
       await chitietyeucau.find()
       .then(datas=>{
-       console.log(datas)
        return datas;
      })
     } catch (error) {
@@ -205,11 +192,9 @@ const ctyc= {
 };
 const cc= {
   get: async (req, res) => {
-   console.log(req.body)
     try {
       await chamcong.find()
       .then(datas=>{
-       console.log(datas)
        return datas;
      })
     } catch (error) {
@@ -221,11 +206,9 @@ const cc= {
 };
 const llv= {
   get: async (req, res) => {
-   console.log(req.body)
     try {
       await lichlamviec.find()
       .then(datas=>{
-       console.log(datas)
        return datas;
      })
     } catch (error) {
@@ -250,11 +233,9 @@ const ngv={
 }
 const ngvb= {
   get: async (req, res) => {
-   console.log(req.body)
     try {
       await ngvban.find()
       .then(datas=>{
-       console.log(datas)
        return datas;
      })
     } catch (error) {
@@ -266,13 +247,9 @@ const ngvb= {
 };
 const nv= {
   get: async (req, res) => {
-   console.log(req.body)
     try {
       await nhanvien.find()
-      .then(datas=>{
-       console.log(datas)
-       return datas;
-     })
+      .then(datas=>datas)
     } catch (error) {
       console.error("Error fetching tieuchi data:", error);
       res.status(500).json({ message: "Internal server error" }); // Send a more informative error message to the client
@@ -286,7 +263,7 @@ const kh={
       await khachhang.find({
         'sdt':req.body.sdt
       })
-      .then(datas=> datas)
+      .then(datas=>datas)
     }catch (error) {
       console.error("Error fetching tieuchi data:", error);
       res.status(500).json({ message: "Internal server error" }); // Send a more informative error message to the client
@@ -323,11 +300,9 @@ const dt={
 }
 const bl= {
   get: async (req, res) => {
-   console.log(req.body)
     try {
       await blog.find()
       .then(datas=>{
-       console.log(datas)
        return datas;
      })
     } catch (error) {
@@ -339,11 +314,9 @@ const bl= {
 };
 const bli= {
   get: async (req, res) => {
-   console.log(req.body)
     try {
       await blogimg.find()
       .then(datas=>{
-       console.log(datas)
        return datas;
      })
     } catch (error) {
